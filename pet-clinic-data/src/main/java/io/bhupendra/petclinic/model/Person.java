@@ -1,4 +1,4 @@
-package io.bhupendra.petclinicdemo.model;
+package io.bhupendra.petclinic.model;
 
 public class Person {
 

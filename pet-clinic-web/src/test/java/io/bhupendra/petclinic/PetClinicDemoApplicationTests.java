@@ -1,4 +1,4 @@
-package io.bhupendra.petclinicdemo;
+package io.bhupendra.petclinic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

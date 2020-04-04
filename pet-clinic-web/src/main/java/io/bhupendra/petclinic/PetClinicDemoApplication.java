@@ -1,4 +1,4 @@
-package io.bhupendra.petclinicdemo;
+package io.bhupendra.petclinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
