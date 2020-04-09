@@ -1,11 +1,11 @@
 package io.bhupendra.petclinic.services.map;
 
 import io.bhupendra.petclinic.model.Vet;
-import io.bhupendra.petclinic.services.CrudService;
+import io.bhupendra.petclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
