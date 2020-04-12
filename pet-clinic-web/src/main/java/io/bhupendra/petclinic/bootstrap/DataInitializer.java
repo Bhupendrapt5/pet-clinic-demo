@@ -1,8 +1,10 @@
 package io.bhupendra.petclinic.bootstrap;
 
 import io.bhupendra.petclinic.model.Owner;
+import io.bhupendra.petclinic.model.PetType;
 import io.bhupendra.petclinic.model.Vet;
 import io.bhupendra.petclinic.services.OwnerService;
+import io.bhupendra.petclinic.services.PetTypeService;
 import io.bhupendra.petclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,15 +14,33 @@ public class DataInitializer implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
 
-    public DataInitializer(OwnerService ownerService, VetService vetService) {
+    public DataInitializer(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
         this.ownerService = ownerService;
 
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+
+
+        PetType dog = new PetType();
+        dog.setName("Dog");
+        PetType savedDogPetType =  petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        cat.setName("Cat");
+        PetType savedCatPetType =  petTypeService.save(cat);
+
+        PetType turtle = new PetType();
+        turtle.setName("Turtle");
+        PetType savedTurtlePetType =  petTypeService.save(turtle);
+
+        System.out.println("Loaded PetTypes");
+
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Abhi");
