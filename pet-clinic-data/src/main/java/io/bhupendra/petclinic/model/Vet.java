@@ -1,8 +1,13 @@
 package io.bhupendra.petclinic.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Vet extends Person {
+
+
+    private Set<Specialty> specialties = new HashSet<>();
+
     public Set<Specialty> getSpecialties() {
         return specialties;
     }
@@ -11,5 +16,4 @@ public class Vet extends Person {
         this.specialties = specialties;
     }
 
-    private Set<Specialty> specialties;
 }

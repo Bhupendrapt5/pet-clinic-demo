@@ -1,6 +1,7 @@
 package io.bhupendra.petclinic.bootstrap;
 
 import io.bhupendra.petclinic.model.Owner;
+import io.bhupendra.petclinic.model.Pet;
 import io.bhupendra.petclinic.model.PetType;
 import io.bhupendra.petclinic.model.Vet;
 import io.bhupendra.petclinic.services.OwnerService;
@@ -8,6 +9,8 @@ import io.bhupendra.petclinic.services.PetTypeService;
 import io.bhupendra.petclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
@@ -45,12 +48,34 @@ public class DataInitializer implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Abhi");
         owner1.setLastName("Gupta");
+        owner1.setAddress("123 Random Place");
+        owner1.setCity("Mumbai");
+        owner1.setMobile("963852741");
+
+        Pet abiPet = new Pet();
+        abiPet.setPetType(savedDogPetType);
+        abiPet.setOwner(owner1);
+        abiPet.setBirthDate(LocalDate.now());
+        abiPet.setPetName("Kaiser");
+
+        owner1.getPets().add(abiPet);
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Bruce");
         owner2.setLastName("Wayne");
+        owner2.setAddress("253 On Hill");
+        owner2.setCity("Gotham");
+        owner2.setMobile("789528596");
+
+        Pet bruPet = new Pet();
+        bruPet.setPetType(savedCatPetType);
+        bruPet.setOwner(owner2);
+        bruPet.setBirthDate(LocalDate.now());
+        bruPet.setPetName("Chonky");
+
+        owner2.getPets().add(bruPet);
 
         ownerService.save(owner2);
 
