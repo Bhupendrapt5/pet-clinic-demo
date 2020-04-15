@@ -1,6 +1,6 @@
 package io.bhupendra.petclinic.services.map;
 
-import io.bhupendra.petclinic.model.Specialty;
+import io.bhupendra.petclinic.model.Speciality;
 import io.bhupendra.petclinic.model.Vet;
 import io.bhupendra.petclinic.services.SpecialityService;
 import io.bhupendra.petclinic.services.VetService;
@@ -37,7 +37,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
         if(object.getSpecialties().size()>=0){
             object.getSpecialties().forEach(specialty -> {
                 if(specialty.getId()==null){
-                    Specialty savedSpecialty = specialityService.save(specialty);
+                    Speciality savedSpecialty = specialityService.save(specialty);
                     specialty.setId(savedSpecialty.getId());
                 }
             });

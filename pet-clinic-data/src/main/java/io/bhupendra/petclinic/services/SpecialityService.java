@@ -1,6 +1,6 @@
 package io.bhupendra.petclinic.services;
 
-import io.bhupendra.petclinic.model.Specialty;
+import io.bhupendra.petclinic.model.Speciality;
 
-public interface SpecialityService extends CrudService<Specialty, Long> {
+public interface SpecialityService extends CrudService<Speciality, Long> {
 }
